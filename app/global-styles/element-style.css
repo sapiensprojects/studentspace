@@ -1,0 +1,15 @@
+img{
+    display: block;
+}
+
+button{
+    font: inherit;
+}
+
+input{
+    font: inherit;
+}
+
+style{
+    display: none !important;
+}
