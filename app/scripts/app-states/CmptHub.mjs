@@ -10,7 +10,7 @@ export class CmptHub{
     }
 
     static navBar(name="navBar"){
-        let homePageUrl = "http://127.0.0.1:5500";
+        let homePageUrl = "https://sapiensprojects.github.io/studentspace/";
 
         let navLeftCode = `
             <a href="${homePageUrl}">

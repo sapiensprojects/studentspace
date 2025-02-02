@@ -6,6 +6,7 @@ export class User{
         User.ROLL = roll;
         User.PASS = pass;
     }
+
     
     static authenticate(){
         // Get user encrypted password
