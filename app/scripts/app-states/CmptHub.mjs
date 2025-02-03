@@ -68,12 +68,12 @@ export class CmptHub{
         let menuCodeCmpt = new CmptWebPage.HtmlCodeCmpt("menuCode", menuCode);
         let menuCmpt = new CmptWebPage.ContainerCmpt("menu", menuCodeCmpt);
         
-
+        let navRightContainer = null;
         if (loginBtnCmpt){
-            let navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [loginBtnCmpt, menuCmpt]);
+            navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [loginBtnCmpt, menuCmpt]);
         }
         else {
-            let navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [menuCmpt]);
+            navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [menuCmpt]);
         }
         navRightContainer.styles = `
             display: flex;
