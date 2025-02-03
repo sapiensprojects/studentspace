@@ -140,7 +140,8 @@ export class CmptHub{
     }
 
     static loggedoutHomePageContent(name="loggedoutHomePageContent"){
-        let rootCmpt = new CmptWebPage.ContainerCmpt(name, []);
+        let rootCmpt = new CmptWebPage.ContainerCmpt(name, [], {"class": ["main-content-margin-top"]});
+        // console.log(rootCmpt.cmptId)
         rootCmpt.styles = `
             min-height: 100vh;
         `
@@ -177,13 +178,15 @@ export class CmptHub{
             position: fixed;
             bottom: 0px;
             left: 0px;
-            // justify-content: space-around;
             align-items: center;
             width: 100%;
             height: 70px;
             box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
             z-index: 1;
             background-color: var(--PRIMARY-COLOR--LIGHT);
+            max-width: var(--PAGE-MAX-WIDTH);
+            left: 50%;
+            transform: translate(-50%, 0);
         `;
 
         rootCmpt.rawStyles = `

@@ -10,13 +10,32 @@ export class LoggedoutHomePage{
         titleCmpt.text = "SPACE | HOME"
 
         // Defining page layout
+        // let layout = [
+        //     ["navBar", CmptHub.navBar, {loginBtn:false}],
+        //     ["loginForm", CmptHub.loginForm],
+        //     ["loggedoutHomePageContent", CmptHub.loggedoutHomePageContent],
+        //     ["copywriteFooter", CmptHub.copywriteFooter]
+        // ]
+        // updateContainerCmptLayout(layout, appBodyCmpt);
+
+        // /*
         let layout = [
             ["navBar", CmptHub.navBar, {loginBtn:false}],
-            ["loginForm", CmptHub.loginForm],
+            // ["loginForm", CmptHub.loginForm],
             ["loggedoutHomePageContent", CmptHub.loggedoutHomePageContent],
             ["copywriteFooter", CmptHub.copywriteFooter]
         ]
         updateContainerCmptLayout(layout, appBodyCmpt);
+
+
+        // let loginFormCmpt = CmptHub.loginForm("loginForm")
+
+        let pageMainContentLayout = [
+            ["loginForm", CmptHub.loginForm]
+        ]
+        updateContainerCmptLayout(pageMainContentLayout, appBodyCmpt.hookeds["loggedoutHomePageContent"]);
+
+        // */
         
         // Adding UI-agents
         let rollInp = document.getElementById("roll-inp");

@@ -1,3 +1,5 @@
 body{
     min-height: 100vh;
+    max-width: var(--PAGE-MAX-WIDTH);
+    margin: auto;
 }

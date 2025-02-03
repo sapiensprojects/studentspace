@@ -2,4 +2,6 @@ html{
     font-family: var(--PRIMARY-FONT), sans-serif;
     background-color: var(--PRIMARY-COLOR--LIGHT);
     /* font-size: 1rem; */
+    /* max-width: var(--PAGE-MAX-WIDTH);
+    margin: auto; */
 }
