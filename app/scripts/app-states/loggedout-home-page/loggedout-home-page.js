@@ -11,7 +11,7 @@ export class LoggedoutHomePage{
 
         // Defining page layout
         let layout = [
-            ["navBar", CmptHub.navBar],
+            ["navBar", CmptHub.navBar, {loginBtn:false}],
             ["loginForm", CmptHub.loginForm],
             ["loggedoutHomePageContent", CmptHub.loggedoutHomePageContent],
             ["copywriteFooter", CmptHub.copywriteFooter]
@@ -31,16 +31,8 @@ export class LoggedoutHomePage{
                 LoggedinHomePage.load(titleCmpt, appBodyCmpt);
             })
 
-            student.authentication.then(() => console.log(student.info))
-
-            student.authentication.catch(() => console.log(student.isAuthentic))
-
-            student.authentication.finally(() => console.log(student.isAuthentic))
             // })
 
-            console.log(student);
-            console.log(student.authentication)
-            setTimeout(() => console.log(student.authentication), 3000)
 
         }
 

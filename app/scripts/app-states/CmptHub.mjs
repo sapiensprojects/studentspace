@@ -9,7 +9,8 @@ export class CmptHub{
         return new CmptWebPage.TitleCmpt(name, text)
     }
 
-    static navBar(name="navBar"){
+    static navBar(name="navBar", configs={}){
+        let loginBtn = configs["loginBtn"];
         let homePageUrl = "https://sapiensprojects.github.io/studentspace/";
 
         let navLeftCode = `
@@ -53,21 +54,27 @@ export class CmptHub{
         `;
 
 
-
-
-        let loginBtnCode = `<button class="btn btn--highlight-color">Login</button>`;
-        let loginBtnCodeCmpt = new CmptWebPage.HtmlCodeCmpt("loginBtnCode", loginBtnCode);
-        let loginBtnCmpt = new CmptWebPage.ContainerCmpt("loginBtn", loginBtnCodeCmpt);
-        loginBtnCmpt.hookStyles = `
-            margin-right: 1rem;
-        `;
+        let loginBtnCmpt = null
+        if (loginBtn){
+            let loginBtnCode = `<button class="btn btn--highlight-color">Login</button>`;
+            let loginBtnCodeCmpt = new CmptWebPage.HtmlCodeCmpt("loginBtnCode", loginBtnCode);
+            loginBtnCmpt = new CmptWebPage.ContainerCmpt("loginBtn", loginBtnCodeCmpt);
+            loginBtnCmpt.hookStyles = `
+                margin-right: 1rem;
+            `;
+        }
 
         let menuCode = `<img src="./app/assets/icons/menu.svg" width="32" height="32">`;
         let menuCodeCmpt = new CmptWebPage.HtmlCodeCmpt("menuCode", menuCode);
         let menuCmpt = new CmptWebPage.ContainerCmpt("menu", menuCodeCmpt);
         
 
-        let navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [loginBtnCmpt, menuCmpt]);
+        if (loginBtnCmpt){
+            let navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [loginBtnCmpt, menuCmpt]);
+        }
+        else {
+            let navRightContainer = new CmptWebPage.ContainerCmpt("navRightContainer", [menuCmpt]);
+        }
         navRightContainer.styles = `
             display: flex;
             align-items: center;

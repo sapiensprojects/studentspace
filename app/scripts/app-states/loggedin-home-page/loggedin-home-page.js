@@ -7,7 +7,7 @@ export class LoggedinHomePage{
 
         // Defining page layout
         let layout = [
-            ["navBar", CmptHub.navBar],
+            ["navBar", CmptHub.navBar, {loginBtn:false}],
             ["loggedoutHomePageContent", CmptHub.loggedoutHomePageContent],
             ["copywriteFooter", CmptHub.copywriteFooter],
             ["bottomNavBarShapedContainer", CmptHub.bottomNavBarShapedContainer],
