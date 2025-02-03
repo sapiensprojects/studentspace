@@ -14,23 +14,23 @@ document.querySelector("body").insertAdjacentElement("afterbegin", appBodyCmpt.g
 
 
 LoggedoutHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedoutAboutPage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedoutHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedoutAboutPage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedoutHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedinAttandancePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
-await new Promise(r => setTimeout(r, 3000));
-LoggedinAttandancePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedoutAboutPage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedoutHomePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedoutAboutPage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedoutHomePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedinAttandancePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedinHomePage.load(appHeadTitle, appBodyCmpt);
+// await new Promise(r => setTimeout(r, 3000));
+// LoggedinAttandancePage.load(appHeadTitle, appBodyCmpt);
 // LoggedinAttandancePage.load(appHeadTitle, appBodyCmpt);
 

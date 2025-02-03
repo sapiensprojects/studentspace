@@ -97,7 +97,7 @@ export class CmptHub{
             <section id="login-form" class="section-margin--second">
                 <input type="text" id="roll-inp" placeholder="University Roll Number">
                 <input type="password" id="password-inp" placeholder="Password">
-                <button class="btn btn--highlight-color">Log In</button>
+                <button class="btn btn--highlight-color" id="login-btn">Log In</button>
             </section>
         `;
 
