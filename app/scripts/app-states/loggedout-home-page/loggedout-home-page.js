@@ -47,7 +47,7 @@ export class LoggedoutHomePage{
             // authenticate()
             // .then(() => {
             student.authentication.then(() => {
-                LoggedinHomePage.load(titleCmpt, appBodyCmpt);
+                LoggedinHomePage.load(titleCmpt, appBodyCmpt, student);
             })
 
             // })

@@ -29,7 +29,7 @@ export function updateContainerCmptLayout(layout, containerCmpt){
     // Adding remaining component
     for (let i = 1; i < requiredLayoutNames.length; i++){
         if (!(currentLayout.includes(requiredLayoutNames[i]))){
-            let requiredCmpt = layout[i][1](requiredLayoutNames[i], layout[0][2]);
+            let requiredCmpt = layout[i][1](requiredLayoutNames[i], layout[i][2]);
             containerCmpt.insertContentAfter(requiredCmpt, requiredLayoutNames[i-1]);
             containerCmpt.refreshAttachment(requiredLayoutNames[i], true);
         }
