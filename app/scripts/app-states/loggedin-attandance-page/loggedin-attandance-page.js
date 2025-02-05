@@ -6,7 +6,7 @@ import { LoggedinMenuPage } from "../loggedin-menu-page/loggedin-menu-page.js";
 
 
 export class LoggedinAttandancePage{
-    static load(pageTitleCmpt, appBodyCmpt){
+    static load(pageTitleCmpt, appBodyCmpt, student){
         pageTitleCmpt.text = "SPACE | ATTANDANCE";
 
         // Defining page layout
@@ -56,17 +56,17 @@ export class LoggedinAttandancePage{
         // UI-agents
         elmts.homeBtn.onclick = () => {
             elmts.attandanceBtn.style.backgroundColor = "transparent";
-            LoggedinHomePage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinHomePage.load(pageTitleCmpt, appBodyCmpt, student);
         }
 
         elmts.toolsBtn.onclick = () => {
             elmts.attandanceBtn.style.backgroundColor = "transparent";
-            LoggedinToolsPage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinToolsPage.load(pageTitleCmpt, appBodyCmpt, student);
         }
 
         elmts.bottomMenuBtn.onclick = () => {
             elmts.attandanceBtn.style.backgroundColor = "transparent";
-            LoggedinMenuPage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinMenuPage.load(pageTitleCmpt, appBodyCmpt, student);
         }
 
     }

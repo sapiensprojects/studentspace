@@ -9,7 +9,7 @@ import { LoggedinMenuPage } from "../loggedin-menu-page/loggedin-menu-page.js";
 
 
 export class LoggedinHomePage{
-    static load(pageTitleCmpt, appBodyCmpt, student={}){
+    static load(pageTitleCmpt, appBodyCmpt, student){
         pageTitleCmpt.text = "SPACE | HOME";
 
         // Defining page layout
@@ -57,17 +57,17 @@ export class LoggedinHomePage{
         // UI-agents
         elmts.attandanceBtn.onclick = () => {
             elmts.homeBtn.style.backgroundColor = "transparent";
-            LoggedinAttandancePage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinAttandancePage.load(pageTitleCmpt, appBodyCmpt, student);
         }
 
         elmts.toolsBtn.onclick = () => {
             elmts.homeBtn.style.backgroundColor = "transparent";
-            LoggedinToolsPage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinToolsPage.load(pageTitleCmpt, appBodyCmpt, student);
         }
 
         elmts.bottomMenuBtn.onclick = () => {
             elmts.homeBtn.style.backgroundColor = "transparent";
-            LoggedinMenuPage.load(pageTitleCmpt, appBodyCmpt);
+            LoggedinMenuPage.load(pageTitleCmpt, appBodyCmpt, student);
         }
         
         // console.log(appBodyCmpt.hookeds["bottomNavBar"]._hooks)
