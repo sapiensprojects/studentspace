@@ -1,37 +1,27 @@
 import { CmptHub } from "../CmptHub.mjs";
 import { updateContainerCmptLayout } from "../utilities.mjs";
 import { LoggedinHomePage } from "../loggedin-home-page/loggedin-home-page.js";
-import { LoggedinToolsPage } from "../loggedin-tools-page.js/loggedin-tools-page.js";
+import { LoggedinAttandancePage } from "../loggedin-attandance-page/loggedin-attandance-page.js";
 import { LoggedinMenuPage } from "../loggedin-menu-page/loggedin-menu-page.js";
 
 
-export class LoggedinAttandancePage{
+
+
+
+export class LoggedinToolsPage{
     static load(pageTitleCmpt, appBodyCmpt){
-        pageTitleCmpt.text = "SPACE | ATTANDANCE";
+        pageTitleCmpt.text = "SPACE | TOOLS";
 
         // Defining page layout
         let layout = [
-            ["navBar", CmptHub.navBar],
-            ["loggedinAttandancePageContent", CmptHub.loggedinAttandancePageContent],
+            ["navBar", CmptHub.navBar, {loginBtn:false}],
+            ["fullPageEmptyContent", CmptHub.fullPageEmptyContent],
             ["copywriteFooter", CmptHub.copywriteFooter],
             ["bottomNavBarShapedContainer", CmptHub.bottomNavBarShapedContainer],
             ["bottomNavBar", CmptHub.bottomNavBar],
 
         ]
         updateContainerCmptLayout(layout, appBodyCmpt);
-
-
-        let attandanceData = [ ['march', 45], ["april", 56.45], ["may", 89], ["june", 90]];
-
-        // Showing Attandance Data on Display
-        if (!(appBodyCmpt.hookeds["loggedinAttandancePageContent"].hookeds["monthwiseAttandanceDisplay"])){
-            appBodyCmpt.hookeds["loggedinAttandancePageContent"].appendContent(
-                CmptHub.monthwiseAttandanceDiplay("monthwiseAttandanceDisplay", attandanceData)
-            );
-        }
-
-        appBodyCmpt.refreshAttachment("loggedinAttandancePageContent");
-
 
         // UI-elements
         let elmts = {
@@ -51,23 +41,26 @@ export class LoggedinAttandancePage{
         getElmts();
 
         // UI-styles
-        elmts.attandanceBtn.style.backgroundColor = "var(--PRIMARY-COLOR--DARK)";
+        elmts.toolsBtn.style.backgroundColor = "var(--PRIMARY-COLOR--DARK)";
         
         // UI-agents
         elmts.homeBtn.onclick = () => {
-            elmts.attandanceBtn.style.backgroundColor = "transparent";
+            elmts.toolsBtn.style.backgroundColor = "trasnparent";
             LoggedinHomePage.load(pageTitleCmpt, appBodyCmpt);
         }
 
-        elmts.toolsBtn.onclick = () => {
-            elmts.attandanceBtn.style.backgroundColor = "transparent";
-            LoggedinToolsPage.load(pageTitleCmpt, appBodyCmpt);
+        elmts.attandanceBtn.onclick = () => {
+            elmts.toolsBtn.style.backgroundColor = "transparent";
+            LoggedinAttandancePage.load(pageTitleCmpt, appBodyCmpt);
         }
 
         elmts.bottomMenuBtn.onclick = () => {
-            elmts.attandanceBtn.style.backgroundColor = "transparent";
+            elmts.toolsBtn.style.backgroundColor = "transparent";
             LoggedinMenuPage.load(pageTitleCmpt, appBodyCmpt);
         }
+        
+        // console.log(appBodyCmpt.hookeds["bottomNavBar"]._hooks)
+
 
     }
 }

@@ -1,4 +1,5 @@
 import { CmptWebPage } from "https://sapiensprojects.github.io/CmptWebPage/CmptWebPage.js";
+import { Icons } from "./Icons.mjs";
 
 export class CmptHub{
     static appBodyCmpt(name="appBodyCmpt"){
@@ -150,27 +151,26 @@ export class CmptHub{
 
 
     static bottomNavBar(name="bottomNavBar"){
-        let bottomNavBtn = "bottomNavBtn";
         
-        let homeBtnCode = `<img src="./app/assets/icons/home.svg" alt="home">`;
+        let homeBtnCode = Icons.homeSvgCode("#2d2d2d", "28", "28");
         let homeBtnHtmlCodeCmpt = new CmptWebPage.HtmlCodeCmpt("homeBtnCode", homeBtnCode);
         let homeBtn = new CmptWebPage.ContainerCmpt("homeBtn", homeBtnHtmlCodeCmpt, {class:["bottom-nav-btn"]});
 
-        let attandanceBtnCode = `<img src="./app/assets/icons/attandence.svg" alt="attandance">`;
+        let attandanceBtnCode = Icons.attandanceSvgCode("#2d2d2d", "38", "38");
         let attandanceBtnHtmlCodeCmpt = new CmptWebPage.HtmlCodeCmpt("attandanceBtnCode", attandanceBtnCode);
         let attandanceBtn = new CmptWebPage.ContainerCmpt("attandanceBtn", attandanceBtnHtmlCodeCmpt, {class:["bottom-nav-btn"]});
         
-        let notificationBtnCode = `<img src="./app/assets/icons/bell.svg" alt="notification">`;
-        let notificationBtnHtmlCodeCmpt = new CmptWebPage.HtmlCodeCmpt("notificationBtnCode", notificationBtnCode)
-        let notificationBtn = new CmptWebPage.ContainerCmpt("notificationBtn", notificationBtnHtmlCodeCmpt, {class:["bottom-nav-btn"]});
+        let toolsBtnCode = Icons.toolsSvgCode("#2d2d2d", "30", "30");
+        let toolsHtmlCodeCmpt = new CmptWebPage.HtmlCodeCmpt("toolsBtnCode", toolsBtnCode)
+        let toolsBtn = new CmptWebPage.ContainerCmpt("toolsBtn", toolsHtmlCodeCmpt, {class:["bottom-nav-btn"]});
 
-        let menuBtnCode = `<img src="./app/assets/icons/menu--blue.svg" alt="menu" width="32" height="32">`;
+        let menuBtnCode = Icons.menuSvgCode("#2d2d2d", "28", "28");
         let menuBtnHtmlCodeCmpt = new CmptWebPage.HtmlCodeCmpt("menuBtnCode", menuBtnCode);
         let menuBtn = new CmptWebPage.ContainerCmpt("menuBtn", menuBtnHtmlCodeCmpt, {class:["bottom-nav-btn"]});
 
         
         let rootCmpt = new CmptWebPage.ContainerCmpt(name, [
-            homeBtn, attandanceBtn, notificationBtn, menuBtn
+            homeBtn, attandanceBtn, toolsBtn, menuBtn
         ]);
         
         rootCmpt.styles = `
@@ -204,7 +204,6 @@ export class CmptHub{
 
         
         // rootCmpt.refreshAttachment("navBtnStyleCode", true)
-
         return rootCmpt;
     }
 
@@ -343,6 +342,15 @@ export class CmptHub{
         `;
         // console.log(cmpt);
         return cmpt;
+    }
+
+    static fullPageEmptyContent(name="fullPageEmptyContent"){
+        let rootCmpt = new CmptWebPage.ContainerCmpt(name, []);
+        rootCmpt.styles = `
+            height: 100vh;
+            width: 100%;
+        `;
+        return rootCmpt;
     }
 
 }
