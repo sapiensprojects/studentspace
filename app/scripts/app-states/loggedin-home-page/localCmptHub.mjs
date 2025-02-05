@@ -25,7 +25,7 @@ export class LocalCmptHub{
         generalInfoFieldCmpt.styles = `
             text-transform: uppercase;
             width: 100%;
-            border-right: 2px solid darkgrey;
+            border-right: 1px solid darkgrey;
             padding: 0 1rem;
             height: 100%;
             display: flex;
